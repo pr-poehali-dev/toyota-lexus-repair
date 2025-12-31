@@ -269,6 +269,128 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+              Наш автосервис
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Современное оборудование и профессиональная команда
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            <div className="group relative overflow-hidden rounded-2xl aspect-square">
+              <img 
+                src="https://cdn.poehali.dev/files/photo_5380005820751351069_w.jpg" 
+                alt="Автосервис Samurai Garage - зона ремонта"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <p className="text-white font-heading font-semibold p-6">Современная зона ремонта</p>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-2xl aspect-square">
+              <img 
+                src="https://cdn.poehali.dev/files/photo_5380005820751351176_w.jpg" 
+                alt="Сервис Lexus - работа с премиум автомобилями"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <p className="text-white font-heading font-semibold p-6">Работа с Lexus</p>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden rounded-2xl aspect-square">
+              <img 
+                src="https://cdn.poehali.dev/files/photo_5380005820751351179_w.jpg" 
+                alt="Диагностика Lexus - премиум интерьер"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                <p className="text-white font-heading font-semibold p-6">Диагностика премиум авто</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Location Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
+                Как нас найти
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Удобное расположение в Мытищах
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              <Card className="overflow-hidden">
+                <CardContent className="p-0">
+                  <iframe 
+                    src="https://yandex.ru/map-widget/v1/?ll=37.736894%2C55.926437&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1NzQxNjY5MRKcAdCg0L7RgdGB0LjRjywg0JzQvtGB0LrQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsINCc0YvRgtC40YnQuCwg0J7Qu9C40LzQv9C40LnRgdC60LjQuSDQv9GA0L7RgdC_0LXQutGCLCDQstC70LDQtNC10L3QuNC1IDM5LCDRgdGC0YDQvtC10L3QuNC1IDEiCg3YrUhCFY82YkI%2C&z=16.5" 
+                    width="100%" 
+                    height="400" 
+                    frameBorder="0"
+                    className="w-full"
+                    title="Samurai Garage на карте"
+                  />
+                </CardContent>
+              </Card>
+
+              <div className="flex flex-col justify-center space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="MapPin" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold text-lg mb-2">Адрес</h3>
+                    <p className="text-muted-foreground">г. Мытищи, Олимпийский проспект вл39с1</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Clock" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold text-lg mb-2">Режим работы</h3>
+                    <p className="text-muted-foreground">Пн-Сб: 10:00 - 20:00</p>
+                    <p className="text-muted-foreground text-sm">Воскресенье: выходной</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                    <Icon name="Car" size={24} className="text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="font-heading font-semibold text-lg mb-2">Специализация</h3>
+                    <p className="text-muted-foreground">Toyota и Lexus любых годов выпуска</p>
+                  </div>
+                </div>
+
+                <Button 
+                  size="lg" 
+                  className="w-full mt-4"
+                  onClick={handleTelegramClick}
+                >
+                  <Icon name="Send" className="mr-2" size={20} />
+                  Записаться на диагностику
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-accent relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
