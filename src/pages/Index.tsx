@@ -5,6 +5,8 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
   const [activeService, setActiveService] = useState(0);
+  const [isWidgetVisible, setIsWidgetVisible] = useState(false);
+  const telegramUsername = 'your_telegram_bot';
 
   const services = [
     {
@@ -54,6 +56,17 @@ const Index = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsWidgetVisible(true);
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleTelegramClick = () => {
+    window.open(`https://t.me/${telegramUsername}`, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -78,9 +91,13 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-heading text-lg px-8 py-6 rounded-full animate-glow-pulse">
-                <Icon name="MessageCircle" className="mr-2" size={20} />
-                Бесплатная консультация
+              <Button 
+                size="lg" 
+                onClick={handleTelegramClick}
+                className="bg-primary hover:bg-primary/90 text-white font-heading text-lg px-8 py-6 rounded-full animate-glow-pulse"
+              >
+                <Icon name="Send" className="mr-2" size={20} />
+                Написать в Telegram
               </Button>
               <Button size="lg" variant="outline" className="border-2 border-primary/50 text-primary hover:bg-primary/10 font-heading text-lg px-8 py-6 rounded-full">
                 <Icon name="CalendarCheck" className="mr-2" size={20} />
@@ -267,9 +284,14 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <Button size="lg" variant="secondary" className="bg-white text-primary hover:bg-white/90 font-heading text-lg px-8 py-6 rounded-full shadow-xl">
-                <Icon name="MessageCircle" className="mr-2" size={20} />
-                Консультация в WhatsApp
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                onClick={handleTelegramClick}
+                className="bg-white text-primary hover:bg-white/90 font-heading text-lg px-8 py-6 rounded-full shadow-xl"
+              >
+                <Icon name="Send" className="mr-2" size={20} />
+                Написать в Telegram
               </Button>
               <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-heading text-lg px-8 py-6 rounded-full">
                 <Icon name="Phone" className="mr-2" size={20} />
@@ -319,6 +341,41 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Telegram Widget */}
+      {isWidgetVisible && (
+        <div className="fixed bottom-6 right-6 z-50 animate-fade-in">
+          <div className="relative">
+            <Button
+              size="lg"
+              onClick={handleTelegramClick}
+              className="h-16 w-16 rounded-full bg-[#0088cc] hover:bg-[#006ba3] text-white shadow-2xl animate-glow-pulse p-0 flex items-center justify-center"
+            >
+              <Icon name="Send" size={28} />
+            </Button>
+            <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-500 rounded-full border-2 border-background animate-pulse"></div>
+          </div>
+          
+          <div className="absolute bottom-20 right-0 bg-card border-2 border-primary/30 rounded-2xl shadow-2xl p-4 w-64 animate-slide-up hidden group-hover:block">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#0088cc] flex items-center justify-center flex-shrink-0">
+                <Icon name="Send" size={20} className="text-white" />
+              </div>
+              <div>
+                <h4 className="font-heading font-semibold text-sm mb-1">Есть вопросы?</h4>
+                <p className="text-xs text-muted-foreground mb-2">Напишите нам в Telegram — ответим быстро!</p>
+                <Button
+                  size="sm"
+                  onClick={handleTelegramClick}
+                  className="bg-[#0088cc] hover:bg-[#006ba3] text-white text-xs"
+                >
+                  Написать сейчас
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
