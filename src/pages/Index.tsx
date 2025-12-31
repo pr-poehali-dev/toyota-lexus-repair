@@ -105,9 +105,8 @@ const Index = () => {
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 text-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-16 text-center">
               {[
-                { num: '15+', label: 'лет опыта' },
                 { num: '2000+', label: 'решённых случаев' },
                 { num: '95%', label: 'находим причину' },
                 { num: '100%', label: 'гарантия качества' },
@@ -252,7 +251,7 @@ const Index = () => {
               <CardContent className="p-8 md:p-12 text-center">
                 <Icon name="Award" size={48} className="text-primary mx-auto mb-6" />
                 <h3 className="font-heading text-2xl md:text-3xl font-bold mb-4">
-                  Работаем с запчастями клиента
+                  Работаем с любыми запчастями
                 </h3>
                 <p className="text-lg text-muted-foreground mb-6">
                   При необходимости подбираем оригиналы и аналоги под ваш бюджет. Фото- и видеоотчёт по результатам работ.
@@ -302,7 +301,7 @@ const Index = () => {
             <div className="grid md:grid-cols-3 gap-6 text-left">
               {[
                 { icon: 'MapPin', title: 'Мытищи', desc: 'Удобное расположение' },
-                { icon: 'Clock', title: 'Пн-Сб 9:00-20:00', desc: 'Запись в удобное время' },
+                { icon: 'Clock', title: 'Пн-Сб 10:00-20:00', desc: 'Запись в удобное время' },
                 { icon: 'Car', title: 'Toyota & Lexus', desc: 'Узкая специализация' },
               ].map((item, i) => (
                 <div key={i} className="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
