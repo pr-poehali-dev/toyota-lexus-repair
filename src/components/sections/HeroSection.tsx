@@ -88,7 +88,9 @@ const HeroSection = ({ onTelegramClick }: HeroSectionProps) => {
             </div>
             
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up leading-tight">
-              Автосервис <span className="text-primary">Toyota</span> и <span className="text-primary">Lexus</span>
+              Автосервис
+              <br />
+              <span className="text-primary">Toyota</span> и <span className="text-primary">Lexus</span>
               <br />
               <span className="text-3xl md:text-5xl lg:text-6xl text-muted-foreground">в Мытищах</span>
             </h1>
