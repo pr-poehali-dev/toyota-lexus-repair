@@ -54,14 +54,25 @@ const HeroSection = ({ onTelegramClick }: HeroSectionProps) => {
                 <p className="text-xs text-muted-foreground">Toyota & Lexus Service</p>
               </div>
             </div>
-            <Button 
-              size="sm" 
-              onClick={onTelegramClick}
-              className="bg-primary hover:bg-primary/90 text-white"
-            >
-              <Icon name="Send" className="mr-2" size={16} />
-              Telegram
-            </Button>
+            <div className="flex gap-2">
+              <Button 
+                size="sm" 
+                onClick={() => window.location.href = 'tel:+79260110952'}
+                className="bg-primary hover:bg-primary/90 text-white"
+              >
+                <Icon name="Phone" className="mr-2" size={16} />
+                +7 926 011-09-52
+              </Button>
+              <Button 
+                size="sm" 
+                onClick={onTelegramClick}
+                variant="outline"
+                className="border-primary/50 text-primary hover:bg-primary/10"
+              >
+                <Icon name="Send" className="mr-2" size={16} />
+                Telegram
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -83,7 +94,7 @@ const HeroSection = ({ onTelegramClick }: HeroSectionProps) => {
             </h1>
             
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
-              Решаем сложные неисправности, с которыми не справились другие сервисы
+              Решаем сложные задачи, с которыми не справились другие сервисы
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
