@@ -42,7 +42,31 @@ const HeroSection = ({ onTelegramClick }: HeroSectionProps) => {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-gradient-to-br from-background via-[#1e2a3a] to-background">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
+                <Icon name="Sword" size={24} className="text-primary-foreground" />
+              </div>
+              <div>
+                <h2 className="font-heading text-xl font-bold leading-tight">SAMURAI GARAGE</h2>
+                <p className="text-xs text-muted-foreground">Toyota & Lexus Service</p>
+              </div>
+            </div>
+            <Button 
+              size="sm" 
+              onClick={onTelegramClick}
+              className="bg-primary hover:bg-primary/90 text-white"
+            >
+              <Icon name="Send" className="mr-2" size={16} />
+              Telegram
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      <section className="relative overflow-hidden bg-gradient-to-br from-background via-[#1e2a3a] to-background pt-20">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
         
         <div className="container mx-auto px-4 py-20 md:py-32 relative z-10">
